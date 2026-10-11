@@ -1,0 +1,23 @@
+[project]
+name = "robo"
+version = "0.1.0"
+description = "Shared project for OpenCV panel detection and future EKF development"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.23,<3",
+    "opencv-python>=4.8,<5",
+]
+
+[project.scripts]
+robo = "robo.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["robo*"]
+exclude = ["robo.tests*", "robo.detection.tests*"]
+namespaces = false
